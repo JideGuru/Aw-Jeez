@@ -1,6 +1,9 @@
-# aw_geez
+# Aw Jeez
 
-A new Flutter application.
+A simple Rick and Morty app to practice using riverpod.
+Made use of the Rick and Morty API(https://rickandmortyapi.com/).
+
+![Screenshot](ss/i.png)
 
 ## Getting Started
 

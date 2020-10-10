@@ -22,8 +22,8 @@ class BodyBuilder extends StatelessWidget {
     return _buildBody();
   }
 
-  Widget _buildBody(){
-    switch(apiRequestStatus){
+  Widget _buildBody() {
+    switch (apiRequestStatus) {
       case APIRequestStatus.loading:
         return loadingWidget;
         break;
@@ -31,15 +31,10 @@ class BodyBuilder extends StatelessWidget {
         return loadingWidget;
         break;
       case APIRequestStatus.connectionError:
-        return MyErrorWidget(
-          refreshCallBack: reload,
-          isConnection: true,
-        );
+        return MyErrorWidget(refreshCallBack: reload, isConnection: true);
         break;
       case APIRequestStatus.error:
-        return MyErrorWidget(
-          refreshCallBack: reload,
-        );
+        return MyErrorWidget(refreshCallBack: reload);
         break;
       case APIRequestStatus.loaded:
         return child;
