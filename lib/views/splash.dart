@@ -1,8 +1,7 @@
 import 'dart:async';
 
-import 'package:aw_geez/screens/home.dart';
-import 'package:aw_geez/util/constants.dart';
-import 'package:aw_geez/util/functions.dart';
+import 'package:aw_geez/util/navigate.dart';
+import 'package:aw_geez/views/home.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -20,10 +19,7 @@ class _SplashState extends State<Splash> {
   }
 
   changeScreen() async {
-    Functions.pushPageReplacement(
-      context,
-      Home(),
-    );
+    Navigate.pushPageReplacement(context, Home());
   }
 
   @override
@@ -42,7 +38,7 @@ class _SplashState extends State<Splash> {
           children: <Widget>[
             Image.asset(
               "assets/images/black_icon.png",
-              color: Theme.of(context).textTheme.title.color,
+              color: Theme.of(context).textTheme.headline6.color,
               height: 150,
               width: 150,
             ),

@@ -8,7 +8,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "${Constants.appName}"
+          "$appName"
         ),
         actions: <Widget>[
           IconButton(

@@ -12,7 +12,6 @@ class ThemeConfig {
     backgroundColor: lightBG,
     primaryColor: lightPrimary,
     accentColor: lightAccent,
-    cursorColor: lightAccent,
     scaffoldBackgroundColor: lightBG,
     appBarTheme: AppBarTheme(
       elevation: 0,
@@ -25,7 +24,6 @@ class ThemeConfig {
     primaryColor: darkPrimary,
     accentColor: darkAccent,
     scaffoldBackgroundColor: darkBG,
-    cursorColor: darkAccent,
     appBarTheme: AppBarTheme(
       elevation: 0,
     ),

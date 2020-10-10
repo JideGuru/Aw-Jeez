@@ -20,10 +20,11 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^0.1.2
-  provider: ^4.0.1
-  shared_preferences: ^0.5.4+5
   google_fonts: ^1.0.0
   flutter_icons: ^1.0.0+1
+  flutter_hooks: ^0.14.0
+  hooks_riverpod: ^0.11.1
+  http: ^0.12.2
 
 dev_dependencies:
   flutter_test:
