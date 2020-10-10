@@ -28,4 +28,14 @@ class ThemeConfig {
       elevation: 0,
     ),
   );
+
+  static BoxShadow cardShadow = BoxShadow(
+    color: Colors.grey[300].withOpacity(0.8),
+    blurRadius: 8.0,
+    spreadRadius: 0.0,
+    offset: Offset(
+      0.0,
+      2.0,
+    ),
+  );
 }

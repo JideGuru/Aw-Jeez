@@ -1,5 +1,5 @@
 import 'package:aw_geez/util/constants.dart';
-import 'package:aw_geez/util/theme_config.dart';
+import 'package:aw_geez/theme/theme_config.dart';
 import 'package:aw_geez/views/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
