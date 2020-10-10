@@ -2,8 +2,8 @@
 
 A simple Rick and Morty app to practice using riverpod.
 Made use of the Rick and Morty API(https://rickandmortyapi.com/).
-<img height='200px' src='ss/1.png'/>
-![Screenshot](ss/1.png)
+</br>
+<img height='600px' src='ss/1.png'/>
 
 ## Getting Started
 
