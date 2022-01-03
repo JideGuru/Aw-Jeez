@@ -5,26 +5,26 @@ import 'package:flutter/material.dart';
 class CharacterCard extends StatelessWidget {
   final Character character;
 
-  CharacterCard({@required this.character});
+  const CharacterCard({Key? key, required this.character}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CustomCard(
       onTap: () {},
-      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+      borderRadius: const BorderRadius.all(Radius.circular(10.0)),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          buildImage(),
-          SizedBox(width: 10.0),
+          CharacterImage(character: character),
+          const SizedBox(width: 10.0),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  character.name,
-                  style: TextStyle(
+                  character.name ?? '',
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18.0,
                   ),
@@ -39,37 +39,24 @@ class CharacterCard extends StatelessWidget {
                         shape: BoxShape.circle,
                       ),
                     ),
-                    SizedBox(width: 5.0),
+                    const SizedBox(width: 5.0),
                     Text(
                       '${character.status} - ${character.species}',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 14.0,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 5.0),
-                buildInfo('Last known location:', character.origin.name),
-                SizedBox(height: 5.0),
-                buildInfo('Origin:', character.location.name),
+                const SizedBox(height: 5.0),
+                buildInfo('Last known location:', character.origin?.name),
+                const SizedBox(height: 5.0),
+                buildInfo('Origin:', character.location?.name),
               ],
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  buildImage() {
-    return ClipRRect(
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(10.0),
-        bottomLeft: Radius.circular(10.0),
-      ),
-      child: Image.network(
-        character.image,
-        height: 145.0,
       ),
     );
   }
@@ -80,7 +67,7 @@ class CharacterCard extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 14.0,
             color: Colors.grey,
@@ -88,7 +75,7 @@ class CharacterCard extends StatelessWidget {
         ),
         Text(
           content,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 14.0,
           ),
@@ -98,9 +85,9 @@ class CharacterCard extends StatelessWidget {
   }
 
   Color statusColor() {
-    switch(character.status.toLowerCase()) {
+    switch (character.status?.toLowerCase()) {
       case 'alive':
-        return Colors.green[300];
+        return Colors.green[300]!;
       case 'dead':
         return Colors.red;
       case 'unknown':
@@ -108,5 +95,25 @@ class CharacterCard extends StatelessWidget {
       default:
         return Colors.blueGrey;
     }
+  }
+}
+
+class CharacterImage extends StatelessWidget {
+  final Character character;
+
+  const CharacterImage({Key? key, required this.character}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: const BorderRadius.only(
+        topLeft: Radius.circular(10.0),
+        bottomLeft: Radius.circular(10.0),
+      ),
+      child: Image.network(
+        character.image ?? '',
+        height: 145.0,
+      ),
+    );
   }
 }

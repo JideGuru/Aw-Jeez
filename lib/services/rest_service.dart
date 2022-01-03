@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 class RestService {
   Future<Map> getCharacters() async {
-    var res = await http.get(characterUrl);
+    var res = await http.get(Uri.parse(characterUrl));
     if (res.statusCode == 200) {
       return jsonDecode(res.body);
     } else {

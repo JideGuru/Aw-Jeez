@@ -5,13 +5,15 @@ import 'package:aw_geez/views/home.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
+  const Splash({Key? key}) : super(key: key);
+
   @override
   _SplashState createState() => _SplashState();
 }
 
 class _SplashState extends State<Splash> {
   startTimeout() {
-    return new Timer(Duration(seconds: 2), handleTimeout);
+    return Timer(const Duration(seconds: 2), handleTimeout);
   }
 
   void handleTimeout() {
@@ -19,7 +21,7 @@ class _SplashState extends State<Splash> {
   }
 
   changeScreen() async {
-    Navigate.pushPageReplacement(context, Home());
+    Navigate.pushPageReplacement(context, const Home());
   }
 
   @override
@@ -38,7 +40,7 @@ class _SplashState extends State<Splash> {
           children: <Widget>[
             Image.asset(
               "assets/images/black_icon.png",
-              color: Theme.of(context).textTheme.headline6.color,
+              color: Theme.of(context).textTheme.headline6?.color,
               height: 150,
               width: 150,
             ),
