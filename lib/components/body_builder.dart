@@ -9,13 +9,13 @@ class BodyBuilder extends StatelessWidget {
   final Widget loadingWidget;
   final Function reload;
 
-  BodyBuilder(
-      {Key key,
-      @required this.apiRequestStatus,
-      @required this.child,
-      @required this.loadingWidget,
-      @required this.reload})
-      : super(key: key);
+  const BodyBuilder({
+    Key? key,
+    required this.apiRequestStatus,
+    required this.child,
+    required this.loadingWidget,
+    required this.reload,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,19 +26,14 @@ class BodyBuilder extends StatelessWidget {
     switch (apiRequestStatus) {
       case APIRequestStatus.loading:
         return loadingWidget;
-        break;
       case APIRequestStatus.unInitialized:
         return loadingWidget;
-        break;
       case APIRequestStatus.connectionError:
         return MyErrorWidget(refreshCallBack: reload, isConnection: true);
-        break;
       case APIRequestStatus.error:
         return MyErrorWidget(refreshCallBack: reload);
-        break;
       case APIRequestStatus.loaded:
         return child;
-        break;
       default:
         return loadingWidget;
     }

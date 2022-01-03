@@ -9,7 +9,7 @@ class HomeViewModel extends ChangeNotifier {
   }
 
   RestService service = RestService();
-  List characters = List();
+  List characters = [];
   APIRequestStatus requestStatus = APIRequestStatus.loading;
 
   getCharacters() async {
