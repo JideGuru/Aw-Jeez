@@ -14,7 +14,7 @@ class Home extends ConsumerWidget {
     var viewModel = ref.watch(homeProvider);
     return Scaffold(
       appBar: AppBar(
-        title: const Text(appName),
+        title: const Text(appName, key: Key('app-name')),
       ),
       body: BodyBuilder(
         apiRequestStatus: viewModel.requestStatus,
