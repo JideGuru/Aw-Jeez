@@ -1,5 +1,5 @@
 import 'package:aw_geez/components/custom_card.dart';
-import 'package:aw_geez/models/character.dart';
+import 'package:aw_geez/data/models/character.dart';
 import 'package:flutter/material.dart';
 
 class CharacterCard extends StatelessWidget {

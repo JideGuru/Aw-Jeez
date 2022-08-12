@@ -1,16 +1,16 @@
-import 'package:aw_geez/services/rest_service.dart';
+import 'package:aw_geez/repositories/home_repository.dart';
 import 'package:aw_geez/views/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockRestService extends Mock implements RestService {}
+class MockHomeRepository extends Mock implements HomeRepository {}
 
 main() {
-  MockRestService _service = MockRestService();
+  MockHomeRepository _service = MockHomeRepository();
   var appNameText = find.byKey(const Key('app-name'));
-  Map charaters = {};
+  Map characters = {};
 
   Widget _makeTestable(Widget child) {
     return ProviderScope(
@@ -20,13 +20,13 @@ main() {
     );
   }
 
-  group('Auth Service Test', () {
+  group('Widget test', () {
     when(() => _service.getCharacters()).thenAnswer((_) async {
-      charaters = {};
-      return charaters;
+      characters = {};
+      return characters;
     });
 
-    testWidgets('Widgets are found', (WidgetTester tester) async {
+    testWidgets('Home Widget is found', (WidgetTester tester) async {
       await tester.pumpWidget(_makeTestable(const Home()));
       expect(appNameText, findsOneWidget);
     });

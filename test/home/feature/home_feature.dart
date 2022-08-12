@@ -1,21 +1,21 @@
-import 'package:aw_geez/services/rest_service.dart';
+import 'package:aw_geez/repositories/home_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockRestService extends Mock implements RestService {}
+class MockHomeRepository extends Mock implements HomeRepository {}
 
 main() {
-  MockRestService _service = MockRestService();
+  MockHomeRepository _service = MockHomeRepository();
   Map charaters = {};
 
-  group('Auth Service Test', () {
+  group('Home repository Test', () {
     when(() => _service.getCharacters()).thenAnswer((_) async {
       charaters = {};
       return charaters;
     });
 
 
-    test("Login with email and password", () async {
+    test("Get characters without errors", () async {
       Map _characters = await _service.getCharacters();
       expect(charaters, _characters);
     });

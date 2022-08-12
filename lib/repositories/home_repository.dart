@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:aw_geez/util/constants.dart';
 import 'package:http/http.dart' as http;
 
-class RestService {
+class HomeRepository {
   Future<Map> getCharacters() async {
     var res = await http.get(Uri.parse(characterUrl));
     if (res.statusCode == 200) {
